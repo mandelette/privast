@@ -12749,23 +12749,19 @@ end)
 addcmd("S19infcredits", {}, function(args, speaker)
 	getgenv().onforinfcredits = true
 
-	if getgenv().onforinfcredits == true then
-    	print("true")
-	else
-    	print("false")
-	end
-
+    print("true")
 	while getgenv().on do
-   	 wait()
+   	wait()
     	local character = game.Players.LocalPlayer.Character
     	if character and character:FindFirstChild("Humanoid") and character.Humanoid.Health <= 10 then
-        character.Humanoid:ChangeState(2)
-   end
-end
+        	character.Humanoid:ChangeState(2)
+   		end
+	end
 end)
 
 addcmd("unS19infcredits", {}, function(args, speaker)
 	getgenv().onforinfcredits = false
+	print('false')
 end)
 
 if IsOnMobile then
