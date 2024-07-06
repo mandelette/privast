@@ -4693,6 +4693,7 @@ CMDs[#CMDs + 1] = {NAME = 'B12Uni / B12Uniform', DESC = 'Bravo 12 [CLIENT]'}
 CMDs[#CMDs + 1] = {NAME = 'TRUCaptain / TRUCaptainUni', DESC = 'TRU Captain Uniform [CLIENT]'}
 CMDs[#CMDs + 1] = {NAME = 'SendMessage [message]', DESC = 'Sends a message [S-19 ONLY]'}
 CMDs[#CMDs + 1] = {NAME = 'S19infcredits', DESC = 'Infinite credits, if you know how to use it.'}
+CMDs[#CMDs + 1] = {NAME = 'unS19infcredits', DESC = 'Stops Infinite credits, if you know how to use it.'}
 wait()
 for i = 1, #CMDs do
 	local newcmd = Example:Clone()
@@ -12746,7 +12747,7 @@ addcmd("promptr15", {}, function(args, speaker)
 end)
 
 addcmd("S19infcredits", {}, function(args, speaker)
-	getgenv().onforinfcredits = not getgenv().onforinfcredits
+	getgenv().onforinfcredits = true
 
 	if getgenv().onforinfcredits == true then
     	print("true")
@@ -12761,6 +12762,10 @@ addcmd("S19infcredits", {}, function(args, speaker)
         character.Humanoid:ChangeState(2)
    end
 end
+end)
+
+addcmd("unS19infcredits", {}, function(args, speaker)
+	getgenv().onforinfcredits = false
 end)
 
 if IsOnMobile then
