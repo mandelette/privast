@@ -12748,21 +12748,24 @@ end)
 
 addcmd("S19infcredits", {}, function(args, speaker)
 	getgenv().onforinfcredits = true
-
     print("true")
-	while getgenv().on do
-   	wait()
-    	local character = game.Players.LocalPlayer.Character
-    	if character and character:FindFirstChild("Humanoid") and character.Humanoid.Health <= 10 then
-        	character.Humanoid:ChangeState(2)
-   		end
-	end
+
+    spawn(function()  -- Using spawn to prevent blocking other code execution
+        while getgenv().onforinfcredits do
+            wait()
+            local character = game.Players.LocalPlayer.Character
+            if character and character:FindFirstChild("Humanoid") and character.Humanoid.Health <= 10 then
+                character.Humanoid:ChangeState(2)
+            end
+        end
+    end)
 end)
 
 addcmd("unS19infcredits", {}, function(args, speaker)
 	getgenv().onforinfcredits = false
 	print('false')
 end)
+
 
 if IsOnMobile then
 	local QuickCapture = Instance.new("TextButton")
