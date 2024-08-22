@@ -59,7 +59,7 @@ end
 
 main:NewButton("Level-1",function()
 	for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel == "1" and v:IsA("Tool") then
+		if v.Name == "Keycard" and v.CardLevel == "1" then
 			lplr.Character.Humanoid:EquipTool(v)
 		end
 	end
@@ -67,7 +67,7 @@ end)
 --notify('Item Not Found', 'Item not found, try again!', 5)
 main:NewButton("Level-2",function()
 for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel == "2" and v:IsA("Tool") then
+		if v.Name == "Keycard" and v.CardLevel == "2" then
 			lplr.Character.Humanoid:EquipTool(v)
 		end
 	end
@@ -75,7 +75,7 @@ end)
 
 main:NewButton("Level-3",function()
 for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel == "3" and v:IsA("Tool") then
+		if v.Name == "Keycard" and v.CardLevel == "3" then
 			lplr.Character.Humanoid:EquipTool(v)
 		end
 	end
@@ -83,7 +83,7 @@ end)
 
 main:NewButton("Level-4",function()
 for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel == "4" and v:IsA("Tool") then
+		if v.Name == "Keycard" and v.CardLevel == "4" then
 			lplr.Character.Humanoid:EquipTool(v)
 		end
 	end
@@ -91,7 +91,7 @@ end)
 
 main:NewButton("Level-5",function()
 for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel == "5" and v:IsA("Tool") then
+		if v.Name == "Keycard" and v.CardLevel == "5" then
 			lplr.Character.Humanoid:EquipTool(v)
 		end
 	end
