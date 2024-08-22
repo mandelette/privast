@@ -42,7 +42,7 @@ for i, v in pairs(items) do
 	main:NewButton(v, function()
 		local item = ws:FindFirstChild(v)
 		if item then
-			if item:IsA("Tool") and item:FindFirstChild("Handle") then
+			if item:IsA("Tool") then
 				lplr.Character.Humanoid:EquipTool(item)
 			end
 		else
