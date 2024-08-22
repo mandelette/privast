@@ -57,42 +57,48 @@ for i, v in pairs(items) do
 	end)
 end
 
-main:NewButton("Level-1",function()
-	for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel.Value == "1" then
+main:NewButton("Level-1", function()
+	for i, v in pairs(ws:GetChildren()) do
+		if v:IsA("Tool") and v.Name == "Keycard" and v:FindFirstChild("CardLevel") and v.CardLevel.Value == 1 then
 			lplr.Character.Humanoid:EquipTool(v)
+			break
 		end
 	end
 end)
+
 --notify('Item Not Found', 'Item not found, try again!', 5)
-main:NewButton("Level-2",function()
-for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel.Value == "2" then
+main:NewButton("Level-2", function()
+	for i, v in pairs(ws:GetChildren()) do
+		if v:IsA("Tool") and v.Name == "Keycard" and v:FindFirstChild("CardLevel") and v.CardLevel.Value == 2 then
 			lplr.Character.Humanoid:EquipTool(v)
+			break
 		end
 	end
 end)
 
-main:NewButton("Level-3",function()
-for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel.Value == "3" then
+main:NewButton("Level-3", function()
+	for i, v in pairs(ws:GetChildren()) do
+		if v:IsA("Tool") and v.Name == "Keycard" and v:FindFirstChild("CardLevel") and v.CardLevel.Value == 3 then
 			lplr.Character.Humanoid:EquipTool(v)
+			break
 		end
 	end
 end)
 
-main:NewButton("Level-4",function()
-for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel.Value == "4" then
+main:NewButton("Level-4", function()
+	for i, v in pairs(ws:GetChildren()) do
+		if v:IsA("Tool") and v.Name == "Keycard" and v:FindFirstChild("CardLevel") and v.CardLevel.Value == 4 then
 			lplr.Character.Humanoid:EquipTool(v)
+			break
 		end
 	end
 end)
 
-main:NewButton("Level-5",function()
-for i,v in pairs(ws:GetChildren()) do
-		if v.Name == "Keycard" and v.CardLevel.Value == "5" then
+main:NewButton("Level-5", function()
+	for i, v in pairs(ws:GetChildren()) do
+		if v:IsA("Tool") and v.Name == "Keycard" and v:FindFirstChild("CardLevel") and v.CardLevel.Value == 5 then
 			lplr.Character.Humanoid:EquipTool(v)
+			break
 		end
 	end
 end)
