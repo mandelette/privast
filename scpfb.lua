@@ -3,7 +3,13 @@ local ws = workspace
 local Forums = Library.new("SCP: Facility Breach GUI")
 local main = Forums.NewSection("Click here!")
 local lplr = game.Players.LocalPlayer
-
+function notify(title, text, duration)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = title,
+		Text = text,
+		Duration = duration
+	})
+end
 if game.PlaceId ~= 10192723897 then
 	print('Not in the right game!')
 	return
@@ -46,11 +52,47 @@ for i, v in pairs(items) do
 				lplr.Character.Humanoid:EquipTool(item)
 			end
 		else
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "Item Not Found",
-				Text = "Item not found, try again.",
-				Duration = 5
-			})
+			notify('Item Not Found', 'Item not found, try again!', 5)
 		end
 	end)
 end
+
+main:NewButton("Level-1",function()
+	for i,v in pairs(ws:GetChildren()) do
+		if v.Name == "Keycard" and v.CardLevel == "1" and v:IsA("Tool") then
+			lplr.Character.Humanoid:EquipTool(v)
+		end
+	end
+end)
+--notify('Item Not Found', 'Item not found, try again!', 5)
+main:NewButton("Level-2",function()
+for i,v in pairs(ws:GetChildren()) do
+		if v.Name == "Keycard" and v.CardLevel == "2" and v:IsA("Tool") then
+			lplr.Character.Humanoid:EquipTool(v)
+		end
+	end
+end)
+
+main:NewButton("Level-3",function()
+for i,v in pairs(ws:GetChildren()) do
+		if v.Name == "Keycard" and v.CardLevel == "3" and v:IsA("Tool") then
+			lplr.Character.Humanoid:EquipTool(v)
+		end
+	end
+end)
+
+main:NewButton("Level-4",function()
+for i,v in pairs(ws:GetChildren()) do
+		if v.Name == "Keycard" and v.CardLevel == "4" and v:IsA("Tool") then
+			lplr.Character.Humanoid:EquipTool(v)
+		end
+	end
+end)
+
+main:NewButton("Level-5",function()
+for i,v in pairs(ws:GetChildren()) do
+		if v.Name == "Keycard" and v.CardLevel == "5" and v:IsA("Tool") then
+			lplr.Character.Humanoid:EquipTool(v)
+		end
+	end
+end)
