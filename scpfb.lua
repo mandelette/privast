@@ -38,10 +38,15 @@ local items = {
 	Radiance = "Radiance",
 	Railgun = "Railgun",
 	Scar_L = "Scar L",
+	SCP_268 = "SCP-268",
 	SCP_500 = "SCP-500",
 	SPAS12 = "Spas-12",
 	Saiga12 = "Saiga-12",
 	UMP45 = "UMP45",
+	Eagle = "Desert Eagle",
+	LVTNN57 = "LVTNN-57",
+	RPK = "RPK",
+	
 }
 
 for i, v in pairs(items) do
