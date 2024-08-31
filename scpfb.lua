@@ -1,9 +1,10 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/potatoei/Site-19-GUI/main/GUI%20BACKUP.lua"))()
 local ws = workspace
 local Forums = Library.new("SCP: Facility Breach GUI")
-local main = Forums.NewSection("Click here!")
+local main = Forums:NewSection("Items")
+local misc = Forums:NewSection('misc')
 local lplr = game.Players.LocalPlayer
-function notify(title, text, duration)
+local function notifyfb(title, text, duration)
 	game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = title,
 		Text = text,
@@ -46,7 +47,9 @@ local items = {
 	Eagle = "Desert Eagle",
 	LVTNN57 = "LVTNN-57",
 	RPK = "RPK",
-	
+	goofy = "goofy gun",
+	sniper = "sniper",
+	Tempest = "Tempest",
 }
 
 for i, v in pairs(items) do
@@ -57,7 +60,7 @@ for i, v in pairs(items) do
 				lplr.Character.Humanoid:EquipTool(item)
 			end
 		else
-			notify('Item Not Found', 'Item not found, try again!', 5)
+			notifyfb('Item Not Found', 'Item not found, try again!', 5)
 		end
 	end)
 end
@@ -107,3 +110,37 @@ main:NewButton("Level-5", function()
 		end
 	end
 end)
+
+misc:NewButton("Infinite Stamina", function()
+	local InfStamina = false
+	if InfStamina == false then
+		lplr.Character.Stamina.MaxStamina.Value = 99999
+		lplr.Character.Stamina.NewStamina.Value = 99999
+		notifyfb("Infinite Stamina", "Enabled",5)
+	end
+end)
+
+misc:NewButton("Escape", function()
+	lplr.Character.HumanoidRootPart.CFrame = workspace.CurrentMap.Surface.FacilityEscapePart.CFrame
+end)
+
+misc:NewButton("Escape Area-51", function()
+	lplr.Character.HumanoidRootPart.CFrame = workspace.CurrentMap.FacilityEscapePart.CFrame
+end)
+misc:NewButton("Escape Pocket Dimension", function()
+	local escape
+	for i, v in pairs(workspace.CurrentMap.PocketDimension:GetDescendants()) do
+		if v:IsA("Part") and v.Name == "PDEscapePart" then
+			escape = v
+			break 
+		end
+	end
+	
+	if escape then
+		lplr.Character.HumanoidRootPart.CFrame = escape.CFrame
+	else
+		notifyfb('Pocket Dimension Error', 'No Pocket Dimension found.', 5)
+	end
+end)
+
+--lo
