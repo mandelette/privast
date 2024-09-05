@@ -89,7 +89,7 @@ oldIndex = hookmetamethod(game, "__index", function(self, Index, Screw)
 		local LocalPlayer = game:GetService("Players").LocalPlayer
 		local Camera = game:GetService("Workspace").CurrentCamera
 		for _, v in pairs(Players:GetPlayers()) do 
-			if not table.find(getgenv().DontShootThesePeople, v.Name) then
+			if not table.find(getgenv().DontShootThesePeople, v.Name) and v.Team ~= LocalPlayer.Team then
 				if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health > 0 then
 					local Enemy = v.Character	
 					local CastingFrom = CFrame.new(Camera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
