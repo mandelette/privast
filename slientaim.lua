@@ -1,6 +1,6 @@
 getgenv().Prediction =  (  .0  )   -- [ PREDICTION: Lower Prediction: Lower Ping | Higher Prediction: Higher Ping  ]
  
-getgenv().FOV =  ( 300 )   -- [ FOV RADIUS: Increases Or Decreases FOV Radius ]
+getgenv().FOV =  ( 200 )   -- [ FOV RADIUS: Increases Or Decreases FOV Radius ]
  
 getgenv().AimKey =  (  "q"  )  -- [ TOGGLE KEY: Toggles Silent Aim On And Off ]
  
@@ -89,7 +89,7 @@ oldIndex = hookmetamethod(game, "__index", function(self, Index, Screw)
 		local LocalPlayer = game:GetService("Players").LocalPlayer
 		local Camera = game:GetService("Workspace").CurrentCamera
 		for _, v in pairs(Players:GetPlayers()) do 
-			if not table.find(getgenv().DontShootThesePeople, v.Name) and v.Team ~= LocalPlayer.Team then
+			if not table.find(getgenv().DontShootThesePeople, v.Name) then
 				if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health > 0 then
 					local Enemy = v.Character	
 					local CastingFrom = CFrame.new(Camera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
@@ -120,3 +120,5 @@ oldIndex = hookmetamethod(game, "__index", function(self, Index, Screw)
 	return oldIndex(self, Index, Screw)
 end)
  
+--Farewell Atman, Nosss, Toru.
+-- edited by raek (a bit of edit btw dont edit --anyth cuz its alrd gud)
