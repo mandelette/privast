@@ -2,7 +2,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/potat
 local ws = workspace
 local Forums = Library.new("SCP: Facility Breach GUI")
 local main = Forums:NewSection("Items")
-local misc = Forums:NewSection('misc')
+local misc = Forums:NewSection('Subs')
 local lplr = game.Players.LocalPlayer
 local function notifyfb(title, text, duration)
 	game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -29,6 +29,7 @@ local items = {
 	M1911 = "M1911",
 	M4A1 = "M4A1",
 	MP9 = "MP9",
+	Tec9 = 'Tec-9',
 	Magnum = "Magnum",
 	Maxim9 = "Maxim 9",
 	Medicine = "Medicine",
@@ -38,10 +39,11 @@ local items = {
 	PumpShotgun = "PumpShotgun",
 	Radiance = "Radiance",
 	Railgun = "Railgun",
-	Scar_L = "Scar L",
+	Scar_L = "Scar-L",
 	SCP_268 = "SCP-268",
 	SCP_500 = "SCP-500",
-	SPAS12 = "Spas-12",
+	SCP_170 = "SCP-170",
+	SPAS12 = "SPAS-12",
 	Saiga12 = "Saiga-12",
 	UMP45 = "UMP45",
 	Eagle = "Desert Eagle",
@@ -50,6 +52,17 @@ local items = {
 	goofy = "goofy gun",
 	sniper = "sniper",
 	Tempest = "Tempest",
+    scp_2398 = "SCP-2398",
+    sweeper = "Sweeper",
+    scp_207 = "SCP-207",
+	cubeman = "Cube Dude",
+	MP5 = "MP5",
+	G36K = "G36K",
+	MP9 = "MP9",
+	Coin = "Coin",
+	Manurhin = "Manuhurin",
+	DoubleB = "DoubleBarrel",
+	
 }
 
 for i, v in pairs(items) do
@@ -116,6 +129,7 @@ misc:NewButton("Infinite Stamina", function()
 	if InfStamina == false then
 		lplr.Character.Stamina.MaxStamina.Value = 99999
 		lplr.Character.Stamina.NewStamina.Value = 99999
+		lplr.Character.Stamina.Value = 99999
 		notifyfb("Infinite Stamina", "Enabled",5)
 	end
 end)
@@ -142,5 +156,3 @@ misc:NewButton("Escape Pocket Dimension", function()
 		notifyfb('Pocket Dimension Error', 'No Pocket Dimension found.', 5)
 	end
 end)
-
---lo
