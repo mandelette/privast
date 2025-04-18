@@ -1,7 +1,3 @@
-Please don't use this without a proper manual. 
+Please don't use the lua code without a proper manual. 
 
-A proper manual can be found on @unknown-link.
-
-If you cannot see the link, that means you do not have the whitelisted permissions to view it. 
-
-Using this without a proper knowledge of it will result in bans.
+Otherwise, if ur using the minecraft ones, ur good to go 😁 js make sure u know how to download it
